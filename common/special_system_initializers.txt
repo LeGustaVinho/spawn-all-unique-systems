@@ -48,7 +48,7 @@ special_init_06 = {
 		}
 	}
 	max_instances = 1
-	scaled_spawn_chance = 3	# scales by galaxy size (1000 stars = 10x base)
+	scaled_spawn_chance = 100	# scales by galaxy size (1000 stars = 10x base)
 
 	flags = { guardians_of_zanaam hostile_system }
 
@@ -247,7 +247,7 @@ special_init_07 = {
 	usage = misc_system_init
 
 	usage_odds = {
-		base = 5
+		base = 90000
 		modifier = {
 			factor = 0
 			NOT = { is_in_cluster = resource_cluster_1 }
@@ -656,9 +656,9 @@ crystal_manufactory_system = {
 	}
 
 	usage = misc_system_init
-	usage_odds = 5
+	usage_odds = 90000
 	max_instances = 1
-	spawn_chance = 25
+	spawn_chance = 100
 
 	planet = {
 		count = 1
@@ -722,7 +722,7 @@ trappist_initializer = {
 	usage = misc_system_init
 	usage_odds = 2000000
 	max_instances = 1
-	scaled_spawn_chance = 10
+	scaled_spawn_chance = 100
 
 	planet = {
 		class = "pc_m_star"
@@ -819,7 +819,7 @@ parvus_system = {
 	}
 	usage = misc_system_init
 	usage_odds = {
-		base = 100
+		base = 10000
 		modifier = {
 			factor = 0
 			is_fe_cluster = yes
@@ -830,7 +830,7 @@ parvus_system = {
 		}
 	}
 	max_instances = 1
-	scaled_spawn_chance = 3	# scales by galaxy size (1000 stars = 10x base)
+	scaled_spawn_chance = 100	# scales by galaxy size (1000 stars = 10x base)
 
 	planet = {
 		count = 1
@@ -929,7 +929,7 @@ polaris_civilization = {
 		}
 	}
 	max_instances = 1
-	scaled_spawn_chance = 5
+	scaled_spawn_chance = 100
 
 	planet = {
 		name = "NAME_PolarisAa"
@@ -1132,7 +1132,7 @@ fumongus_init_01 = {
 	class = "rl_standard_stars"
 	usage = misc_system_init
 	usage_odds = {
-		base = 200
+		base = 90000
 		modifier = {
 			factor = 0
 			has_star_flag = empire_cluster
@@ -1348,7 +1348,7 @@ ghost_ship_system_initializer_01 = {
 	}
 	usage = misc_system_init
 	usage_odds = {
-		base = 10
+		base = 90000
 		modifier = {
 			factor = 0
 			has_star_flag = empire_cluster
@@ -1807,7 +1807,7 @@ locust_system_initializer_01 = {
 
 	usage = misc_system_init
 	usage_odds = {
-		base = 4
+		base = 90000
 		modifier = {
 			factor = 0
 			has_star_flag = empire_cluster
@@ -2056,14 +2056,14 @@ Holibrae_initializer = {
 	class = "sc_m"
 	usage = misc_system_init
 	usage_odds = {
-		base = 4
+		base = 90000
 		modifier = {
 			factor = 0
 			has_star_flag = empire_cluster
 		}
 	}
 	max_instances = 1
-	scaled_spawn_chance = 10
+	scaled_spawn_chance = 100
 	flags = { holibrae_system hostile_system }
 
 	#create nebula
@@ -2224,9 +2224,9 @@ Holibrae_initializer = {
 debris_belt_initializer = {
 	class = "sc_m"
 	usage = misc_system_init
-	usage_odds = 8
+	usage_odds = 90000
 	max_instances = 1
-	scaled_spawn_chance = 10
+	scaled_spawn_chance = 100
 
 	asteroid_belt = {
 		type = debris_asteroid_belt
@@ -2823,7 +2823,7 @@ the_chosen_gate_initializer = {
 				is_fe_cluster = no
 				NOR = {
 					has_star_flag = empire_cluster
-					has_star_flag = chosen_system
+					has_star_flag = crisis_spawn_exclude
 				}
 			}
 			spawn_natural_wormhole = {
@@ -3188,7 +3188,7 @@ breachsealer_system = {
 		}
 	}
 	max_instances = 1
-	scaled_spawn_chance = 4	# scales by galaxy size (1000 stars = 10x base)
+	scaled_spawn_chance = 100	# scales by galaxy size (1000 stars = 10x base)
 
 	planet = {
 		name = "NAME_Seddom"
@@ -3364,7 +3364,7 @@ metal_planet_system_initializer = {
 	usage = misc_system_init
 
 	usage_odds = {
-		base = 5
+		base = 5000
 		modifier = {
 			factor = 0
 			has_star_flag = empire_cluster
@@ -3380,7 +3380,7 @@ metal_planet_system_initializer = {
 	}
 
 	max_instances = 1
-	scaled_spawn_chance = 3
+	scaled_spawn_chance = 100
 
 	asteroid_belt = {
 		type = debris_asteroid_belt
@@ -3438,7 +3438,7 @@ previously_terraformed_planet_system_initializer = {
 
 	usage = misc_system_init
 	usage_odds = {
-		base = 5
+		base = 5000
 		modifier = {
 			factor = 0
 			has_star_flag = empire_cluster
@@ -3453,7 +3453,7 @@ previously_terraformed_planet_system_initializer = {
 		}
 	}
 	max_instances = 1
-	scaled_spawn_chance = 3
+	scaled_spawn_chance = 100
 
 	asteroid_belt = {
 		type = debris_asteroid_belt
@@ -3518,7 +3518,7 @@ collided_planet_system_initializer = {
 	usage = misc_system_init
 
 	usage_odds = {
-		base = 5
+		base = 5000
 		modifier = {
 			factor = 0
 			has_star_flag = empire_cluster
@@ -3534,7 +3534,7 @@ collided_planet_system_initializer = {
 	}
 
 	max_instances = 1
-	scaled_spawn_chance = 3
+	scaled_spawn_chance = 100
 
 	planet = {
 		class = pc_m_star
@@ -3637,7 +3637,7 @@ wooden_planet_system_initializer = {
 	usage = misc_system_init
 
 	usage_odds = {
-		base = 5
+		base = 5000
 		modifier = {
 			factor = 0
 			has_star_flag = empire_cluster
@@ -3653,7 +3653,7 @@ wooden_planet_system_initializer = {
 	}
 
 	max_instances = 1
-	scaled_spawn_chance = 3
+	scaled_spawn_chance = 100
 
 	planet = {
 		class = star

@@ -17,7 +17,7 @@ hauer_system_initializer = {
 
 	usage = misc_system_init
 	usage_odds = {
-		base = 1
+		base = 90000
 		modifier = {
 			factor = 0
 			has_star_flag = empire_cluster
@@ -1943,12 +1943,12 @@ mega_shipyard_init_01 = {
 		base = 0
 		modifier = {
 			host_has_dlc = "Federations"
-			add = 100
+			add = 90000
 		}
 	}
 
 	max_instances = 1
-	scaled_spawn_chance = 2
+	scaled_spawn_chance = 100
 
 	# Star
 	planet = {
@@ -2011,34 +2011,20 @@ planet_with_too_many_moons_system = {
 	usage_odds = {
 		base = 0
 		modifier = { #spawns nearby the xenophobe FE
-			add = 200
+			add = 90000
 			any_country = {
 				has_country_flag = fallen_empire_4
 			}
 			NOT = { has_star_flag = empire_cluster }
-			NAND = {
-				exists = owner
-				owner = {
-					has_country_flag = fallen_empire_4
-				}
-			}
-			NOT = {
-				any_neighbor_system = {
-					exists = owner
-					owner = { has_country_flag = fallen_empire_4 }
-				}
-			}
+			NOT = { is_in_cluster = fe4_cluster }
 			any_neighbor_system = {
-				any_neighbor_system = {
-					exists = owner
-					owner = { has_country_flag = fallen_empire_4 }
-				}
+				is_in_cluster = fe4_cluster
 			}
 		}
 	}
 
 	max_instances = 1
-	scaled_spawn_chance = 3
+	scaled_spawn_chance = 100
 
 	flags = { planet_with_too_many_moons_system hostile_system }
 
@@ -2432,7 +2418,7 @@ wenkwort_initializer = {
 
 	usage = misc_system_init	#The game can pick this initialiser randomly for misc. purposes, i.e those which have not been initialised by empires or fallen empires
 	usage_odds = {
-		base = 1
+		base = 90000
 		modifier = {
 			factor = 0
 			OR = {

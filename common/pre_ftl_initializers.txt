@@ -661,7 +661,7 @@ sanctuary_system = {
 	}
 	max_instances = 1
 	flags = { sanctuary_system ring_world_built }
-	scaled_spawn_chance = 2	# scales by galaxy size (1000 stars = 10x base)
+	scaled_spawn_chance = 100	# scales by galaxy size (1000 stars = 10x base)
 
 	name = "NAME_Sanctuary"
 
@@ -1360,7 +1360,7 @@ pre_ftl_shattered_ring = {
 	max_instances = 1
 	usage = misc_system_init
 	usage_odds = {
-		base = 5
+		base = 90000
 		modifier = {
 			factor = 0
 			any_system = {
@@ -1379,7 +1379,7 @@ pre_ftl_shattered_ring = {
 	}
 	primitive_system = yes	# usage odds modified by primitives setup slider
 
-	scaled_spawn_chance = 5
+	scaled_spawn_chance = 100
 
 	init_effect = {
 		generate_home_system_resources = yes

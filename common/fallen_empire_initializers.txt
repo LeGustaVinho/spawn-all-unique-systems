@@ -518,7 +518,7 @@ fallen_2 = {
 		initializer = "fallen_holy_04"
 	}
 	neighbor_system = {
-		spawn_chance = 25
+		spawn_chance = 100
 		distance = { min = 0 max = 30 }
 		initializer = "fallen_shrouded"
 	}

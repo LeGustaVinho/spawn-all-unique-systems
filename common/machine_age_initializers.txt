@@ -149,13 +149,13 @@ ruined_arc_furnace_system = {
 	flags = { ruined_arc_furnace_system }
 
 	max_instances = 1
-	scaled_spawn_chance = 4
+	scaled_spawn_chance = 100
 
 	usage_odds = {
 		base = 0
 		modifier = {
 			host_has_dlc = "The Machine Age"
-			add = 100
+			add = 90000
 		}
 	}
 

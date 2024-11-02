@@ -1106,7 +1106,7 @@ hostile_init_07 = {
 	}
 
 	max_instances = 1
-	spawn_chance = 100
+	spawn_chance = 9999
 
 	flags = { hostile_system elite_system crystal_home_system space_critter_system }
 
@@ -2285,7 +2285,7 @@ hostile_init_14 = {
 	}
 
 	max_instances = 1
-	spawn_chance = 100
+	spawn_chance = 9999
 
 	flags = { hostile_system drone_home_system }
 
@@ -2829,7 +2829,7 @@ hostile_init_18 = {
 	}
 
 	max_instances = 1
-	spawn_chance = 100
+	spawn_chance = 9999
 
 	flags = { hostile_system pirate_home_system pirate_system }
 

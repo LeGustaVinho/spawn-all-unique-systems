@@ -12,7 +12,7 @@ relic_system_1 = {
 	usage = misc_system_init
 
 	usage_odds = {
-		base = 4
+		base = 90000
 		modifier = {
 			factor = 0
 			has_star_flag = empire_cluster
@@ -524,7 +524,7 @@ relic_system_4 = {
 	usage = misc_system_init
 
 	usage_odds = {
-		base = 4
+		base = 90000
 		modifier = {
 			factor = 0
 			has_star_flag = empire_cluster
@@ -831,7 +831,7 @@ mechanocalibrator_system = {
 			has_star_flag = empire_cluster
 		}
 	}
-	scaled_spawn_chance = 8
+	scaled_spawn_chance = 100
 	max_instances = 1
 
 	flags = { mechanocalibrator_system }

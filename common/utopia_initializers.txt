@@ -13,12 +13,12 @@ dyson_sphere_init_01 = {
 		base = 0
 		modifier = {
 			host_has_dlc = "Utopia"
-			add = 100
+			add = 90000
 		}
 	}
 
 	max_instances = 1
-	scaled_spawn_chance = 2
+	scaled_spawn_chance = 100
 
 	planet = {
 		class = star
@@ -358,12 +358,12 @@ science_nexus_init_01 = {
 		base = 0
 		modifier = {
 			host_has_dlc = "Utopia"
-			add = 100
+			add = 90000
 		}
 	}
 
 	max_instances = 1
-	scaled_spawn_chance = 4
+	scaled_spawn_chance = 100
 
 	planet = {
 		class = star
@@ -465,12 +465,12 @@ sentry_array_init_01 = {
 		base = 0
 		modifier = {
 			host_has_dlc = "Utopia"
-			add = 100
+			add = 90000
 		}
 	}
 
 	max_instances = 1
-	scaled_spawn_chance = 4
+	scaled_spawn_chance = 100
 
 	planet = {
 		class = star
@@ -838,12 +838,12 @@ ring_world_init_01 = {
 		base = 0
 		modifier = {
 			host_has_dlc = "Utopia"
-			add = 100
+			add = 90000
 		}
 	}
 
 	max_instances = 1
-	scaled_spawn_chance = 3
+	scaled_spawn_chance = 100
 
 	planet = {
 		class = star

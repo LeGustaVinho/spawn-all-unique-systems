@@ -7,7 +7,7 @@ star_lifting_system = {
 	prevent_anomalies = yes
 	usage = misc_system_init
 	usage_odds = {
-		base = 90000
+		base = @spawn_system_max
 		modifier = {
 			factor = 0
 			has_distar = no
@@ -22,7 +22,7 @@ star_lifting_system = {
 		}
 	}
 	max_instances = 1
-	scaled_spawn_chance = 100
+	scaled_spawn_chance = 8
 
 	flags = { star_lifting_system }
 
@@ -142,22 +142,15 @@ big_rip_system = {
 	class = sc_f
 	usage = misc_system_init
 	usage_odds = {
-		base = 90000
+		base = @spawn_system_max
 		modifier = {
 			factor = 0
 			has_distar = no
 		}
-		modifier = {
-			factor = 0
-			is_fe_cluster = yes
-		}
-		modifier = {
-			factor = 0
-			has_star_flag = empire_cluster
-		}
+		inline_script = "solar_system_initializers/initializer_modifiers_habitable_world_systems"
 	}
 	max_instances = 1
-	scaled_spawn_chance = 100
+	scaled_spawn_chance = 8
 	flags = { big_rip_system }
 
 	planet = {
@@ -209,26 +202,19 @@ time_loop_world_system = {
 
 	usage = misc_system_init
 	usage_odds = {
-		base = 90000
+		base = @spawn_system_max
 		modifier = {
 			factor = 0
 			has_distar = no
 		}
 		modifier = {
 			factor = 0
-			is_fe_cluster = yes
-		}
-		modifier = {
-			factor = 0
-			has_star_flag = empire_cluster
-		}
-		modifier = {
-			factor = 0
 			blocks_disruptive_gameplay = yes
 		}
+		inline_script = "solar_system_initializers/initializer_modifiers_habitable_world_systems"
 	}
 	max_instances = 1
-	scaled_spawn_chance = 100
+	scaled_spawn_chance = 8
 	flags = { time_loop_world_system }
 
 	planet = {
@@ -309,7 +295,7 @@ toxic_planet_toxic_moon = {
 
 	usage = misc_system_init
 	usage_odds = {
-		base = 90000
+		base = @spawn_system_max
 		modifier = {
 			factor = 0
 			has_distar = no
@@ -321,7 +307,7 @@ toxic_planet_toxic_moon = {
 	}
 
 	max_instances = 1
-	scaled_spawn_chance = 100
+	scaled_spawn_chance = 8
 
 	flags = { toxic_moon_system }
 
@@ -374,7 +360,7 @@ shattered_world_system = {
 
 	usage = misc_system_init
 	usage_odds = {
-		base = 90000
+		base = @spawn_system_max
 		modifier = {
 			factor = 0
 			has_distar = no
@@ -386,7 +372,7 @@ shattered_world_system = {
 	}
 
 	max_instances = 1
-	scaled_spawn_chance = 100
+	scaled_spawn_chance = 8
 
 	flags = { shattered_world_system }
 
@@ -441,7 +427,7 @@ asteroid_system = {
 
 	usage = misc_system_init
 	usage_odds = {
-		base = 90000
+		base = @spawn_system_max
 		modifier = {
 			factor = 0
 			has_distar = no
@@ -453,7 +439,7 @@ asteroid_system = {
 	}
 
 	max_instances = 1
-	scaled_spawn_chance = 100
+	scaled_spawn_chance = 8
 
 	flags = { asteroid_system }
 
@@ -560,7 +546,7 @@ hostile_init_mining_drones = {
 
 	usage = misc_system_init
 	usage_odds = {
-		base = 4
+		base = @spawn_system_max
 		modifier = {
 			factor = 0
 			has_star_flag = empire_cluster
@@ -702,7 +688,7 @@ hostile_init_amoeba = {
 
 	usage = misc_system_init
 	usage_odds = {
-		base = 4
+		base = @spawn_system_max
 		modifier = {
 			factor = 0
 			has_distar = no
@@ -798,7 +784,7 @@ hostile_init_void_cloud = {
 
 	usage = misc_system_init
 	usage_odds = {
-		base = 4
+		base = @spawn_system_max
 		modifier = {
 			factor = 0
 			has_distar = no
@@ -1024,19 +1010,16 @@ ice_system = {
 
 	usage = misc_system_init
 	usage_odds = {
-		base = 90000
+		base = @spawn_system_max
 		modifier = {
 			factor = 0
 			has_distar = no
 		}
-		modifier = {
-			factor = 0
-			has_star_flag = empire_cluster
-		}
+		inline_script = "solar_system_initializers/initializer_modifiers_habitable_world_systems"
 	}
 
 	max_instances = 1
-	scaled_spawn_chance = 100	# scales by galaxy size (1000 stars = 10x base)
+	scaled_spawn_chance = 8	# scales by galaxy size (1000 stars = 10x base)
 
 	flags = { ice_system }
 
@@ -1135,7 +1118,7 @@ high_energy_system = {
 
 	usage = misc_system_init
 	usage_odds = {
-		base = 90000
+		base = @spawn_system_max
 		modifier = {
 			factor = 0
 			has_distar = no
@@ -1147,7 +1130,7 @@ high_energy_system = {
 	}
 
 	max_instances = 1
-	scaled_spawn_chance = 100	# scales by galaxy size (1000 stars = 10x base)
+	scaled_spawn_chance = 8	# scales by galaxy size (1000 stars = 10x base)
 
 	flags = { high_energy_system }
 
@@ -1198,10 +1181,13 @@ guardians_init_hatchling = {
 
 	usage = misc_system_init
 	usage_odds = {
-		base = 90000
+		base = @spawn_system_max
 		modifier = {
 			factor = 0
-			has_distar = no
+			NOR = {
+				has_distar = yes
+				has_biogenesis_dlc = yes
+			}
 		}
 		modifier = {
 			factor = 0
@@ -1217,7 +1203,7 @@ guardians_init_hatchling = {
 	}
 
 	max_instances = 1
-	scaled_spawn_chance = 100	# scales by galaxy size (1000 stars = 10x base)
+	scaled_spawn_chance = 8	# scales by galaxy size (1000 stars = 10x base)
 
 	flags = { guardians_hatchling_system guardian hostile_system }
 
@@ -1249,7 +1235,7 @@ guardians_init_hatchling = {
 			prevent_anomaly = yes
 			random_list = {
 				60 = { set_planet_flag = hatchling_will_trigger }
-				#40 = {}
+				40 = {}
 			}
 		}
 	}
@@ -1277,7 +1263,7 @@ great_wound_system = {
 
 	usage = misc_system_init
 	usage_odds = {
-		base = 90000
+		base = @spawn_system_max
 		modifier = {
 			factor = 0
 			has_star_flag = empire_cluster
@@ -1289,7 +1275,7 @@ great_wound_system = {
 	}
 
 	max_instances = 1
-	scaled_spawn_chance = 100	# scales by galaxy size (1000 stars = 10x base)
+	scaled_spawn_chance = 8	# scales by galaxy size (1000 stars = 10x base)
 
 	flags = { great_wound }
 
@@ -1672,21 +1658,14 @@ primitive_robot_system = {
 
 	usage = misc_system_init
 	usage_odds = {
-		base = 90000
+		base = @spawn_system_max
 		modifier = {
 			factor = 0
 			has_distar = no
 		}
-		modifier = {
-			factor = 0
-			is_fe_cluster = yes
-		}
-		modifier = {
-			factor = 0
-			has_star_flag = empire_cluster
-		}
+		inline_script = "solar_system_initializers/initializer_modifiers_habitable_world_systems"
 	}
-	scaled_spawn_chance = 100	# scales by galaxy size (1000 stars = 10x base)
+	scaled_spawn_chance = 6	# scales by galaxy size (1000 stars = 10x base)
 	max_instances = 1
 
 	primitive_system = yes	# usage odds modified by primitives setup slider
@@ -1724,7 +1703,6 @@ primitive_robot_system = {
 		init_effect = {
 			set_planet_flag = primitive_robot_planet
 			prevent_anomaly = yes
-			#clear_blockers = yes
 			add_deposit = d_city_ruins
 			add_deposit = d_city_ruins
 			add_deposit = d_failing_infrastructure
@@ -1765,7 +1743,7 @@ superflare_system = {
 
 	usage = misc_system_init
 	usage_odds = {
-		base = 90000
+		base = @spawn_system_max
 		modifier = {
 			factor = 0
 			has_distar = no
@@ -1779,7 +1757,7 @@ superflare_system = {
 			has_star_flag = empire_cluster
 		}
 	}
-	scaled_spawn_chance = 100
+	scaled_spawn_chance = 8
 	max_instances = 1
 
 	flags = { superflare_system }
@@ -1854,22 +1832,15 @@ collapse_system = {
 
 	usage = misc_system_init
 	usage_odds = {
-		base = 90000
+		base = @spawn_system_max
 		modifier = {
 			factor = 0
 			has_distar = no
 		}
-		modifier = {
-			factor = 0
-			is_fe_cluster = yes
-		}
-		modifier = {
-			factor = 0
-			has_star_flag = empire_cluster
-		}
+		inline_script = "solar_system_initializers/initializer_modifiers_habitable_world_systems"
 	}
 	primitive_system = yes
-	scaled_spawn_chance = 100
+	scaled_spawn_chance = 8
 	max_instances = 1
 
 	flags = { collapse_system }
@@ -1973,7 +1944,7 @@ collapse_system = {
 				}
 				while = {
 					count = 4
-					create_pop = {
+					create_pop_group = {
 						species = last_created_species
 					}
 				}
@@ -2013,22 +1984,15 @@ old_foes_system = {
 
 	usage = misc_system_init
 	usage_odds = {
-		base = 90000
+		base = @spawn_system_max
 		modifier = {
 			factor = 0
 			has_distar = no
 		}
-		modifier = {
-			factor = 0
-			is_fe_cluster = yes
-		}
-		modifier = {
-			factor = 0
-			has_star_flag = empire_cluster
-		}
+		inline_script = "solar_system_initializers/initializer_modifiers_habitable_world_systems"
 	}
 	primitive_system = yes
-	scaled_spawn_chance = 100
+	scaled_spawn_chance = 8
 	max_instances = 1
 
 	flags = { old_foes_system }
@@ -2107,7 +2071,7 @@ scavenger_system = {
 
 	usage = misc_system_init
 	usage_odds = {
-		base = 90000
+		base = @spawn_system_max
 		modifier = {
 			factor = 0
 			has_distar = no
@@ -2125,7 +2089,7 @@ scavenger_system = {
 			is_bottleneck_system = yes
 		}
 	}
-	scaled_spawn_chance = 100
+	scaled_spawn_chance = 8
 	max_instances = 1
 
 	flags = { scavenger_bot_system guardian hostile_system }
@@ -2643,27 +2607,20 @@ scavenger_system = {
 	}
 }
 
-#Sea of Consciousness System
+# Sea of Consciousness system
 living_planet_system = {
 	class = "sc_binary_3"
 
 	usage = misc_system_init
 	usage_odds = {
-		base = 90000
+		base = @spawn_system_max
 		modifier = {
 			factor = 0
 			has_distar = no
 		}
-		modifier = {
-			factor = 0
-			is_fe_cluster = yes
-		}
-		modifier = {
-			factor = 0
-			has_star_flag = empire_cluster
-		}
+		inline_script = "solar_system_initializers/initializer_modifiers_habitable_world_systems"
 	}
-	scaled_spawn_chance = 100
+	scaled_spawn_chance = 8
 	max_instances = 1
 
 	flags = { living_planet_system }
@@ -2746,7 +2703,7 @@ elderly_tiyanki_system = {
 
 	usage = misc_system_init
 	usage_odds = {
-		base = 90000
+		base = @spawn_system_max
 		modifier = {
 			factor = 0
 			has_distar = no
@@ -2764,7 +2721,7 @@ elderly_tiyanki_system = {
 			is_bottleneck_system = yes
 		}
 	}
-	scaled_spawn_chance = 100
+	scaled_spawn_chance = 8
 	max_instances = 1
 
 	flags = { elderly_tiyanki_system guardian hostile_system }
@@ -2986,7 +2943,7 @@ ratling_1_1 = {
 
 	usage = misc_system_init
 	usage_odds = {
-		base = 90000
+		base = @spawn_system_max
 		modifier = {
 			factor = 0
 			has_distar = no
@@ -2998,16 +2955,12 @@ ratling_1_1 = {
 				species_portrait = mam_rat
 			}
 		}
-		modifier = {
-			factor = 0
-			is_fe_cluster = yes
-		}
-		modifier = {
-			factor = 0
-			has_star_flag = empire_cluster
+		inline_script = {
+			script = solar_system_initializers/initializer_modifiers_habitable_world_systems_mult
+			VALUE = 0.4
 		}
 	}
-	scaled_spawn_chance = 100
+	scaled_spawn_chance = 8
 	max_instances = 1
 
 	flags = { ruined_empire ratling_home_system ratling_system }
@@ -3638,7 +3591,7 @@ distar_crystal_system = {
 
 	usage = misc_system_init
 	usage_odds = {
-		base = 10
+		base = @spawn_system_max
 		modifier = {
 			factor = 0
 			has_distar = no
@@ -3855,21 +3808,14 @@ distar_pod_system = {
 
 	usage = misc_system_init
 	usage_odds = {
-		base = 90000
+		base = @spawn_system_max
 		modifier = {
 			factor = 0
 			has_distar = no
 		}
-		modifier = {
-			factor = 0
-			is_fe_cluster = yes
-		}
-		modifier = {
-			factor = 0
-			has_star_flag = empire_cluster
-		}
+		inline_script = "solar_system_initializers/initializer_modifiers_habitable_world_systems"
 	}
-	scaled_spawn_chance = 100
+	scaled_spawn_chance = 8
 	max_instances = 1
 
 	flags = { escape_pod_system }
@@ -4002,7 +3948,7 @@ distar_phaseshift_system = {
 
 	usage = misc_system_init
 	usage_odds = {
-		base = 90000
+		base = @spawn_system_max
 		modifier = {
 			factor = 0
 			has_distar = no
@@ -4016,7 +3962,7 @@ distar_phaseshift_system = {
 			has_star_flag = empire_cluster
 		}
 	}
-	scaled_spawn_chance = 100
+	scaled_spawn_chance = 8
 	max_instances = 1
 
 	flags = { phaseshift_system }
@@ -4088,9 +4034,9 @@ distantstars_init_00 = {
 	usage_odds = {
 		base = 0
 		modifier = {
-			no_scope = { has_distar = yes }
+			has_distar = yes
 			lgate_enabled = yes
-			add = 3
+			add = 2
 		}
 		modifier = {
 			factor = 0
@@ -4159,9 +4105,9 @@ distantstars_init_06 = {
 	usage_odds = {
 		base = 0
 		modifier = {
-			no_scope = { has_distar = yes }
+			has_distar = yes
 			lgate_enabled = yes
-			add = 99999
+			add = @spawn_system_max
 		}
 		modifier = {
 			factor = 0

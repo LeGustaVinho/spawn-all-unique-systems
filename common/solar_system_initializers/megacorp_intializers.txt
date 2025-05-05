@@ -16,7 +16,7 @@ megacorp_caravaneer_init = {
 		modifier = {
 			has_megacorp = yes
 			caravaneers_enabled = yes
-			add = 90000
+			add = @spawn_system_max
 		}
 		modifier = {
 			factor = 0
@@ -28,10 +28,6 @@ megacorp_caravaneer_init = {
 		modifier = {
 			factor = 0
 			has_star_flag = empire_cluster
-		}
-		modifier = {
-			factor = 0
-			is_bottleneck_system = yes
 		}
 	}
 
@@ -561,14 +557,26 @@ megacorp_caravaneer_init = {
 				event_target:caravaneer_fleet1_fleet = { fleet_event = { id = cara.1000 days = @caravaneerfleetlaunch3 } }
 			}
 			1 = { # 3 - 2
+				modifier = {
+					factor = 0
+					NAND = {
+						has_global_flag = spawn_caravaneer_3
+						has_global_flag = spawn_caravaneer_2
+					}
+				}
 				event_target:caravaneer_fleet3_fleet = { fleet_event = { id = cara.3000 days = @caravaneerfleetlaunch1 } }
 				event_target:caravaneer_fleet2_fleet = { fleet_event = { id = cara.2000 days = @caravaneerfleetlaunch2 } }
-				event_target:caravaneer_fleet1_fleet = { fleet_event = { id = cara.1000 days = @caravaneerfleetlaunch3 } }
 			}
 			1 = { # 3 - 1
+				modifier = {
+					factor = 0
+					NAND = {
+						has_global_flag = spawn_caravaneer_3
+						has_global_flag = spawn_caravaneer_1
+					}
+				}
 				event_target:caravaneer_fleet3_fleet = { fleet_event = { id = cara.3000 days = @caravaneerfleetlaunch1 } }
 				event_target:caravaneer_fleet1_fleet = { fleet_event = { id = cara.1000 days = @caravaneerfleetlaunch2 } }
-				event_target:caravaneer_fleet2_fleet = { fleet_event = { id = cara.2000 days = @caravaneerfleetlaunch3 } }
 			}
 		}
 	}
@@ -585,12 +593,12 @@ megacorp_matter_decompressor_init_01 = {
 		base = 0
 		modifier = {
 			host_has_dlc = "Megacorp"
-			add = 90000
+			add = 100
 		}
 	}
 
 	max_instances = 1
-	scaled_spawn_chance = 100
+	scaled_spawn_chance = 4
 
 	planet = {
 		class = star
@@ -674,12 +682,12 @@ megacorp_strategic_coordination_center_init_01 = {
 		base = 0
 		modifier = {
 			host_has_dlc = "Megacorp"
-			add = 90000
+			add = 100
 		}
 	}
 
 	max_instances = 1
-	scaled_spawn_chance = 100
+	scaled_spawn_chance = 4
 
 	planet = {
 		class = star
@@ -1040,12 +1048,12 @@ megacorp_mega_art_installation_init_01 = {
 		base = 0
 		modifier = {
 			host_has_dlc = "Megacorp"
-			add = 90000
+			add = 100
 		}
 	}
 
 	max_instances = 1
-	scaled_spawn_chance = 100
+	scaled_spawn_chance = 4
 
 	planet = {
 		count = 1
@@ -1149,12 +1157,12 @@ megacorp_interstellar_assembly_init_01 = {
 		base = 0
 		modifier = {
 			host_has_dlc = "Megacorp"
-			add = 90000
+			add = 100
 		}
 	}
 
 	max_instances = 1
-	scaled_spawn_chance = 100
+	scaled_spawn_chance = 4
 
 	flags = { ruined_interstellar_assembly_system }
 

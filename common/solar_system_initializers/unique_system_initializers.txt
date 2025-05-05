@@ -1,6 +1,6 @@
 @distance = 50
 @base_moon_distance = 10
-@unique_system_spawn_chance = 100
+@unique_system_spawn_chance = 25
 
 # Federation's End - Black Hole with habitats inhabited by primitives
 unique_system_initializer_01 = {
@@ -11,20 +11,15 @@ unique_system_initializer_01 = {
 	usage = misc_system_init
 
 	usage_odds = {
-		base = 90000
-		modifier = {
-			factor = 0
-			is_fe_cluster = yes
-		}
-		modifier = {
-			factor = 0
-			has_star_flag = empire_cluster
-		}
+		base = @spawn_system_max
+		inline_script = "solar_system_initializers/initializer_modifiers_habitable_world_systems"
 	}
 
 	spawn_chance = @unique_system_spawn_chance
+	primitive_system = yes # usage odds modified by primitives setup slider
 
 	max_instances = 1
+	primitive_system = yes
 
 	flags = { unique_system primitive_system federation_end }
 
@@ -162,15 +157,8 @@ unique_system_initializer_02 = {
 	usage = misc_system_init
 
 	usage_odds = {
-		base = 90000
-		modifier = {
-			factor = 0
-			is_fe_cluster = yes
-		}
-		modifier = {
-			factor = 0
-			has_star_flag = empire_cluster
-		}
+		base = @spawn_system_max
+		inline_script = "solar_system_initializers/initializer_modifiers_habitable_world_systems"
 	}
 
 	spawn_chance = @unique_system_spawn_chance
@@ -296,7 +284,7 @@ unique_system_initializer_03 = {
 	usage = misc_system_init
 
 	usage_odds = {
-		base = 90000
+		base = @spawn_system_max
 		modifier = {
 			factor = 0
 			is_fe_cluster = yes
@@ -510,7 +498,7 @@ unique_system_initializer_04 = {
 	usage = misc_system_init
 
 	usage_odds = {
-		base = 90000
+		base = @spawn_system_max
 		modifier = {
 			factor = 0
 			is_fe_cluster = yes
@@ -700,7 +688,7 @@ unique_system_initializer_05 = {
 	usage = misc_system_init
 
 	usage_odds = {
-		base = 90000
+		base = @spawn_system_max
 		modifier = {
 			factor = 0
 			is_fe_cluster = yes
@@ -947,7 +935,7 @@ unique_system_initializer_06 = {
 	usage = misc_system_init
 
 	usage_odds = {
-		base = 90000
+		base = @spawn_system_max
 		modifier = {
 			factor = 0
 			is_fe_cluster = yes
@@ -1181,14 +1169,14 @@ unique_system_initializer_07 = {
 	usage = misc_system_init
 
 	usage_odds = {
-		base = 90000
-		modifier = {
-			factor = 0
-			is_fe_cluster = yes
+		base = @spawn_system_max
+		inline_script = {
+			script = solar_system_initializers/initializer_modifiers_habitable_world_systems_mult
+			VALUE = 0.4
 		}
 		modifier = {
 			factor = 0
-			has_star_flag = empire_cluster
+			any_system = { has_star_flag = triple_system }
 		}
 	}
 
@@ -1402,14 +1390,14 @@ unique_system_initializer_08 = {
 	usage = misc_system_init
 
 	usage_odds = {
-		base = 90000
-		modifier = {
-			factor = 0
-			is_fe_cluster = yes
+		base = @spawn_system_max
+		inline_script = {
+			script = solar_system_initializers/initializer_modifiers_habitable_world_systems_mult
+			VALUE = 0.4
 		}
 		modifier = {
 			factor = 0
-			has_star_flag = empire_cluster
+			any_system = { has_star_flag = triple_system }
 		}
 	}
 
@@ -1606,14 +1594,14 @@ unique_system_initializer_09 = {
 	usage = misc_system_init
 
 	usage_odds = {
-		base = 90000
-		modifier = {
-			factor = 0
-			is_fe_cluster = yes
+		base = @spawn_system_max
+		inline_script = {
+			script = solar_system_initializers/initializer_modifiers_habitable_world_systems_mult
+			VALUE = 0.4
 		}
 		modifier = {
 			factor = 0
-			has_star_flag = empire_cluster
+			any_system = { has_star_flag = triple_system }
 		}
 	}
 
@@ -1753,15 +1741,8 @@ lone_defender = {
 	usage = misc_system_init
 
 	usage_odds = {
-		base = 90000
-		modifier = {
-			factor = 0
-			is_fe_cluster = yes
-		}
-		modifier = {
-			factor = 0
-			has_star_flag = empire_cluster
-		}
+		base = @spawn_system_max
+		inline_script = "solar_system_initializers/initializer_modifiers_habitable_world_systems"
 	}
 	max_instances = 1
 
